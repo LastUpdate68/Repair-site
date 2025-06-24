@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صيانة النغمة الجديدة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; font-family: 'Cairo', sans-serif; background-color: #f1f5f9; direction: rtl; }
+        .sidebar { height: 100vh; width: 250px; position: fixed; top: 0; right: 0; background: linear-gradient(135deg, #1e90ff, #0d6efd); padding-top: 20px; display: flex; flex-direction: column; box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); }
+        .sidebar a { padding: 20px; text-decoration: none; font-size: 18px; color: white; display: block; text-align: right; transition: background 0.3s; }
+        .sidebar a:hover { background-color: rgba(255, 255, 255, 0.2); }
+        .main { margin-right: 250px; padding: 30px; }
+        header { background-color: white; padding: 20px 30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #e2e8f0; }
+        .card { background-color: white; padding: 30px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .button { background: linear-gradient(135deg, #1e90ff, #0d6efd); color: white; padding: 12px 24px; text-decoration: none; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; transition: background 0.3s; }
+        .button:hover { background: linear-gradient(135deg, #0d6efd, #1e90ff); }
+        input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; }
+        h1, h2 { color: #1e293b; }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <a href="#home">الرئيسية</a>
+    <a href="#about">من نحن</a>
+    <a href="#services">الخدمات</a>
+    <a href="#booking">حجز موعد</a>
+    <a href="#warranty">الضمان</a>
+    <a href="#track">تتبع الطلب</a>
+    <a href="#contact">تواصل معنا</a>
+</div>
+<div class="main">
+    <header>
+        <h1>صيانة النغمة الجديدة</h1>
+    </header>
+    <section id="home" class="card">
+        <h2>مرحبًا بكم</h2>
+        <p>نقدم خدمات صيانة احترافية لجميع أنواع الهواتف بأعلى جودة وأسرع وقت.</p>
+        <a href="#booking" class="button">احجز موعدك الآن</a>
+    </section>
+    <section id="about" class="card">
+        <h2>من نحن</h2>
+        <p>فريق متخصص في صيانة الهواتف الذكية بخبرة طويلة وسمعة طيبة. نضمن الجودة ورضا العميل.</p>
+    </section>
+    <section id="services" class="card">
+        <h2>خدماتنا</h2>
+        <ul>
+            <li>تغيير شاشات بجودة أصلية</li>
+            <li>استبدال بطاريات مع ضمان</li>
+            <li>إصلاح مداخل الشحن</li>
+            <li>صيانة الأجهزة المتضررة من السوائل</li>
+            <li>فحص شامل قبل الشراء</li>
+            <li>بيع إكسسوارات أصلية</li>
+        </ul>
+    </section>
+    <section id="booking" class="card">
+        <h2>احجز موعد صيانة</h2>
+        <form id="bookingForm">
+            <label>الاسم الكامل:</label>
+            <input type="text" name="name" required>
+            <label>نوع الجهاز:</label>
+            <input type="text" name="device" required>
+            <label>نوع العطل:</label>
+            <input type="text" name="issue" required>
+            <label>رقم الجوال:</label>
+            <input type="text" name="phone" required>
+            <label>ملاحظات إضافية:</label>
+            <textarea name="notes"></textarea>
+            <button type="submit" class="button">إرسال الطلب</button>
+        </form>
+    </section>
+    <section id="warranty" class="card">
+        <h2>فترة الضمان</h2>
+        <p>نوفر ضماناً لمدة 30 يومًا على جميع خدمات الصيانة.</p>
+        <p>للتأكد من فترة الضمان، يرجى مراجعة فاتورتك أو التواصل معنا برقم الطلب.</p>
+    </section>
+    <section id="track" class="card">
+        <h2>تتبع حالة الطلب</h2>
+        <form>
+            <label>أدخل رقم الطلب:</label>
+            <input type="text" name="orderNumber" required>
+            <button type="submit" class="button">تتبع الطلب</button>
+        </form>
+    </section>
+    <section id="contact" class="card">
+        <h2>تواصل معنا</h2>
+        <p>📞 رقم الجوال: 056XXXXXXX</p>
+        <p>📍 الموقع: [رابط قوقل ماب]</p>
+        <p>🟢 واتساب: [رابط واتساب]</p>
+        <p>⏰ ساعات العمل: من 10 صباحًا إلى 10 مساءً</p>
+    </section>
+</div>
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        let formData = {
+            name: document.querySelector('input[name="name"]').value,
+            device: document.querySelector('input[name="device"]').value,
+            issue: document.querySelector('input[name="issue"]').value,
+            phone: document.querySelector('input[name="phone"]').value,
+            notes: document.querySelector('textarea[name="notes"]').value
+        };
+        fetch('رابط_الويب_اب_من_قوقل', {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: { 'Content-Type': 'application/json' }
+        }).then(response => response.text())
+          .then(data => {
+              alert('تم إرسال الطلب بنجاح');
+              document.getElementById('bookingForm').reset();
+          }).catch(error => {
+              alert('حدث خطأ أثناء الإرسال');
+          });
+    });
+</script>
+</body>
+</html>
